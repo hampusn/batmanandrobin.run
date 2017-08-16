@@ -1,12 +1,13 @@
-const gulp   = require('gulp');
-const sass   = require('gulp-sass');
-const srcmap = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
-const imgmin = require('gulp-imagemin');
-const watch  = require('gulp-watch');
-const concat = require('gulp-concat');
-const fs     = require('fs');
-const path   = require('path');
+const gulp         = require('gulp');
+const sass         = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const srcmap       = require('gulp-sourcemaps');
+const uglify       = require('gulp-uglify');
+const imgmin       = require('gulp-imagemin');
+const watch        = require('gulp-watch');
+const concat       = require('gulp-concat');
+const fs           = require('fs');
+const path         = require('path');
 
 // Styles
 gulp.task('sass', () => {
@@ -14,6 +15,10 @@ gulp.task('sass', () => {
     .pipe(srcmap.init())
     .pipe(sass({
       "outputStyle": "compressed"
+    }))
+    .pipe(autoprefixer({
+      "browsers": ['last 2 versions'],
+      "cascade": false
     }))
     .pipe(srcmap.write('.'))
     .pipe(gulp.dest('./dist/css/'));
