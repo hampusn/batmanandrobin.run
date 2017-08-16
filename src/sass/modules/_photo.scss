@@ -1,0 +1,17 @@
+/**
+ * modules/_photo.scss
+ * 
+ * @author Hampus Nordin <nordin.hampus@gmail.com>
+ * @preserve
+ */
+
+.photo {
+  margin-left: -2em;
+  margin-right: -2em;
+  position: relative;
+  z-index: 2;
+}
+
+.photo--batman {
+  margin-left: -6em;
+}

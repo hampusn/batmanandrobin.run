@@ -1,0 +1,39 @@
+/**
+ * modules/_skyline.scss
+ * 
+ * @author Hampus Nordin <nordin.hampus@gmail.com>
+ * @preserve
+ */
+
+.skyline {
+  border-bottom: 2vh solid $color-batman-red;
+  bottom: 0;
+  height: 20vh;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  will-change: width, height, left;
+
+  div {
+    bottom: 0;
+    background: $color-batman-red;  
+    position: absolute;
+    transform-origin: center bottom;
+    transition:
+      width 1s,
+      height 1s,
+      left 1s;
+
+    &:nth-child(20n) {
+      -webkit-clip-path: polygon(50% 0%, 110% 15%, 110% 100%, -10% 100%, -10% 15%);
+      clip-path: polygon(50% 0%, 110% 15%, 110% 100%, -10% 100%, -10% 15%);
+    }
+
+    &:nth-child(12n) {
+      -webkit-clip-path: polygon(-10% 15%, 100% 0, 110% 110%, -10% 100%);
+      clip-path: polygon(-10% 15%, 100% 0, 110% 110%, -10% 100%);
+    }
+  }
+}

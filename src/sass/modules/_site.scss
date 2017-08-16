@@ -1,0 +1,28 @@
+/**
+ * modules/_site.scss
+ * 
+ * @author Hampus Nordin <nordin.hampus@gmail.com>
+ * @preserve
+ */
+
+$logo-pullup: 18em;
+
+.site {
+  margin: 2em auto;
+  max-width: 50em;
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  margin-top: $logo-pullup;
+
+  &__logo {
+    margin-top: ($logo-pullup * -1);
+    margin-left: -4em;
+    margin-right: -4em;
+  }
+}
+
+.site-content {}
+.site-footer {}

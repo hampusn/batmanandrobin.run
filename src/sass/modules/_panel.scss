@@ -1,0 +1,59 @@
+/**
+ * modules/_panel.scss
+ * 
+ * @author Hampus Nordin <nordin.hampus@gmail.com>
+ * @preserve
+ */
+
+.panel {
+  background: lighten($color-batman-yellow, 25%);
+  border: 6px solid $color-batman-black;
+  flex: 1 1 10%;
+  margin-bottom: 1em;
+  padding: 1em;
+  width: 100%;
+
+  &--no-growth {
+    flex: 0 1 auto;
+  }
+
+  &.panel-row,
+  &.panel-column,
+  &--no-border {
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+}
+
+.panel-row,
+.panel-column {
+  display: flex;
+}
+
+.panel-row {
+  & > .panel + .panel {
+    margin-left: 1em;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+
+    & > .panel + .panel {
+      margin-left: auto;
+      margin-right: 1em;
+    }
+  }
+}
+
+.panel-column {
+  flex-direction: column;
+
+  & > .panel:last-child {
+    margin-bottom: 0;
+  }
+
+  &--reverse {
+    flex-direction: column-reverse;
+  }
+}

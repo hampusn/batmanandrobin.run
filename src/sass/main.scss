@@ -1,0 +1,23 @@
+/**
+ * Main styling for batmanandrobin.run.
+ * 
+ * @author Hampus Nordin <nordin.hampus@gmail.com>
+ * @preserve
+ */
+
+$font-stack-base: 'Walter Turncoat', sans-serif;
+$font-stack-heading: 'Bangers', sans-serif;
+
+
+$color-batman-yellow: #FFFF19;
+$color-batman-red: #FF3D25;
+$color-batman-black: #1F1A17;
+$color-batman-paper-white: #EDE1C9;
+
+
+@import "modules/base";
+@import "modules/typography";
+@import "modules/site";
+@import "modules/panel";
+@import "modules/photo";
+@import "modules/skyline";

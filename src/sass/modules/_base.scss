@@ -1,0 +1,39 @@
+/**
+ * modules/_base.scss
+ * 
+ * @author Hampus Nordin <nordin.hampus@gmail.com>
+ * @preserve
+ */
+
+html {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+html, body {
+  background: $color-batman-yellow;
+  margin: 0;
+}
+
+body {
+  font-size: 100%;
+  padding: 0 4em;
+}
+
+img, video {
+  height: auto;
+  max-width: 100%;
+}
+
+table {
+  text-align: left;
+  width: 100%;
+}
+
+tr {}
+th {}
+td {}
