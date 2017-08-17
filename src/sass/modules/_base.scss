@@ -24,9 +24,10 @@ body {
   padding: 0 4em;
 }
 
-img, video {
+img, video, iframe {
   height: auto;
   max-width: 100%;
+  vertical-align: middle;
 }
 
 table {
