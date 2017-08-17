@@ -8,8 +8,18 @@
 (function ($, window, document, undefined) {
   // Default options
   var defaultOptions = {
-    "num": 64
+    "num": 64,
+    "minWidth": 1,
+    "maxWidth": 4,
+    "minHeight": 5,
+    "maxHeight": 90
   };
+
+
+
+  function randomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 
   // Document Ready
   $(function () {
@@ -21,9 +31,9 @@
         var $building = $('<div>');
 
         $building.css({
-          "width": Math.floor((Math.random() * 4) + 1) + "%",
-          "height": Math.floor((Math.random() * 75) + 1) + "%",
-          "left": 5 + (i * 1.5) + "%"
+          "width": randomInt(opts.minWidth, opts.maxWidth) + "%",
+          "height": randomInt(opts.minHeight, opts.maxHeight) + "%",
+          "left": 2 + (i * 1.5) + "%"
         });
 
         $skyline.append($building);
