@@ -32,9 +32,16 @@ img, video, iframe {
 
 table {
   text-align: left;
+  vertical-align: top;
   width: 100%;
 }
 
+tbody, tr, th, td {
+  vertical-align: inherit;
+}
+
 tr {}
-th {}
-td {}
+th,
+td {
+  padding: 0.25em;
+}
