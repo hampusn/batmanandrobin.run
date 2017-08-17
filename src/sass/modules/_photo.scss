@@ -15,3 +15,12 @@
 .photo--batman {
   margin-left: -6em;
 }
+
+
+@media screen and (max-device-width: 600px) {
+  .photo {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}

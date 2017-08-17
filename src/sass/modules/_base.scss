@@ -45,3 +45,12 @@ th,
 td {
   padding: 0.25em;
 }
+
+
+@media screen and (max-device-width: 600px) {
+  body {
+    padding-left: 1em;
+    padding-right: 1em;  
+  }
+
+}

@@ -6,6 +6,7 @@
  */
 
 $logo-pullup: 18em;
+$logo-pullup-mobile: 6em;
 
 .site {
   margin: 2em auto 10em;
@@ -26,3 +27,17 @@ $logo-pullup: 18em;
 
 .site-content {}
 .site-footer {}
+
+
+@media screen and (max-device-width: 600px) {
+  .site-header {
+    margin-top: $logo-pullup-mobile;
+
+    &__logo {
+      margin-top: ($logo-pullup-mobile * -1);
+      margin-left: -2em;
+      margin-right: -2em;
+    }
+  }
+
+}

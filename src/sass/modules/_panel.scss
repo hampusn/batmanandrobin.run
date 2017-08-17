@@ -57,3 +57,20 @@
     flex-direction: column-reverse;
   }
 }
+
+
+
+@media screen and (max-device-width: 600px) {
+  .panel-row {
+    display: block;
+  }
+
+  .panel-row .panel + .panel {
+    margin-left: 0;
+  }
+
+  .panel--no-border {
+    margin-bottom: 0;
+  }
+}
+
