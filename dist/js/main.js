@@ -1,3 +1,13 @@
+!function(n,i){var r=function(n,i,r){var t;return function(){var e=this,u=arguments;t?clearTimeout(t):r&&n.apply(e,u),t=setTimeout(function(){r||n.apply(e,u),t=null},i||100)}};jQuery.fn[i]=function(n){return n?this.bind("resize",r(n)):this.trigger(i)}}(jQuery,"smartresize"),$(window).smartresize(function(){});
+
+/**
+ * Responsive iframe module
+ * 
+ * @author Hampus Nordin <nordin.hampus@gmail.com>
+ * @preserve
+ */
+!function(e,t,i,r){var a={width:null,height:null};e(function(){e("[data-responsive-iframe]").each(function(t,i){var r=e(i),h=e.extend({},a,r.data("responsiveIframe")),n=Number.isInteger(h.width)?h.width:r.width(),s=(Number.isInteger(h.height)?h.height:r.height())/n;r.data("responsiveIframeRatio",s),r.removeAttr("height").removeAttr("width").css({width:"100%"})}),e(t).trigger("resize")}),e(t).smartresize(function(t){e("[data-responsive-iframe]").each(function(t,i){var r=e(i),a=r.data("responsiveIframeRatio"),h=r.width();r.height(h*a)})})}(jQuery,this,this.document);
+
 /**
  * Skyline module
  * 
