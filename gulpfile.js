@@ -11,7 +11,7 @@ const path         = require('path');
 
 // Styles
 gulp.task('sass', () => {
-  gulp.src('./src/sass/**/*.scss')
+  return gulp.src('./src/sass/**/*.scss')
     .pipe(srcmap.init())
     .pipe(sass({
       "outputStyle": "compressed"
@@ -26,7 +26,7 @@ gulp.task('sass', () => {
 
 // Javascript
 gulp.task('js', () => {
-  gulp.src(['./src/js/vendor/*.js', './src/js/modules/*.js', './src/js/main.js'])
+  return gulp.src(['./src/js/vendor/*.js', './src/js/modules/*.js', './src/js/main.js'])
     .pipe(uglify({
       "output": {
         "comments": "some"
@@ -38,32 +38,18 @@ gulp.task('js', () => {
 
 // Images
 gulp.task('img', () => {
-  gulp.src('./src/img/**/*.{jpg,jpeg,png,gif,svg}')
-    .pipe(imgmin({
-      'optimizationLevel': 5,
-      'interlaced': true
-    }))
+  return gulp.src('./src/img/**/*.{jpg,jpeg,png,gif,svg}')
+    .pipe(imgmin([
+      imgmin.jpegtran({progressive: true}),
+      imgmin.optipng({optimizationLevel: 6})
+    ]))
     .pipe(gulp.dest('./dist/img/'));
 });
 
 // Html
 gulp.task('html', () => {
-  let indexSrcPath = path.join(__dirname, 'src/index.html');
-  let indexDistPath = path.join(__dirname, 'dist/index.html');
-  fs.readFile(indexSrcPath, (err, data) => {
-    if (err) throw err;
-
-    fs.writeFile(indexDistPath, data, (err) => {
-      if (err) throw err;
-    });
-  });
-});
-
-// Video
-gulp.task('video', () => {
   let files = {
-    "src/video/teaser.m4v": "dist/video/teaser.m4v",
-    "src/video/teaser.webm": "dist/video/teaser.webm"
+    "src/index.html": "dist/index.html"
   };
 
   Object.entries(files).forEach(([src, dist]) => {
