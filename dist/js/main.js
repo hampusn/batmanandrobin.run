@@ -6,7 +6,7 @@
  * @author Hampus Nordin <nordin.hampus@gmail.com>
  * @preserve
  */
-!function(e,t,i,r){var a={width:null,height:null};e(function(){e("[data-responsive-iframe]").each(function(t,i){var r=e(i),h=e.extend({},a,r.data("responsiveIframe")),n=Number.isInteger(h.width)?h.width:r.width(),s=(Number.isInteger(h.height)?h.height:r.height())/n;r.data("responsiveIframeRatio",s),r.removeAttr("height").removeAttr("width").css({width:"100%"})}),e(t).trigger("resize")}),e(t).smartresize(function(t){e("[data-responsive-iframe]").each(function(t,i){var r=e(i),a=r.data("responsiveIframeRatio"),h=r.width();r.height(h*a)})})}(jQuery,this,this.document);
+!function(e,t,i,r){var n={width:null,height:null};Number.isInteger=Number.isInteger||function(e){return"number"==typeof e&&isFinite(e)&&Math.floor(e)===e},e(function(){e("[data-responsive-iframe]").each(function(t,i){var r=e(i),a=e.extend({},n,r.data("responsiveIframe")),h=Number.isInteger(a.width)?a.width:r.width(),s=(Number.isInteger(a.height)?a.height:r.height())/h;r.data("responsiveIframeRatio",s),r.removeAttr("height").removeAttr("width").css({width:"100%"})}),e(t).trigger("resize")}),e(t).smartresize(function(t){e("[data-responsive-iframe]").each(function(t,i){var r=e(i),n=r.data("responsiveIframeRatio"),a=r.width();r.height(a*n)})})}(jQuery,this,this.document);
 
 /**
  * Skyline module
