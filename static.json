@@ -1,6 +1,0 @@
-{
-  "root": "dist",
-  "clean_urls": true,
-  "error": "info",
-  "https_only": true
-}
